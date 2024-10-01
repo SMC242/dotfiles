@@ -25,26 +25,7 @@ return {
 
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
-        "pyright",
-        "isort",
-        "black",
-        "bash-language-server",
-        "typescript-language-server",
-        "eslint-lsp",
-        "yamllint",
-        "yaml-language-server",
-        "json-lsp",
-        "rust-analyzer",
-        "codelldb",
-      },
-    },
+    opts = {},
   },
 
   {
