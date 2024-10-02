@@ -40,7 +40,8 @@ return {
         "markdown",
         "markdown_inline",
         "rust",
-        "yaml"
+        "yaml",
+        "c_sharp",
       },
     },
   },
