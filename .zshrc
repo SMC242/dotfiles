@@ -71,7 +71,7 @@ alias commit-msg="curl https://whatthecommit.com/index.txt"
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
 bindkey "^[[1;5D" backward-word  # CTRL + Right
-bindkey "^W" backward-kill-word  # CTRL + Backspace
+bindkey "^H" backward-kill-word  # CTRL + Backspace
 bindkey "5~" kill-word  # CTRL + DEL
 
 # History
@@ -109,5 +109,3 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
     tmux attach 2> /dev/null || exec tmux new-session
 fi
 
-# Show start art
-source "$HOME/startup-script"
