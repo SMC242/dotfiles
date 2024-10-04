@@ -8,6 +8,9 @@
 # PATH
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
 
+# Set up GHCup
+[ -f "/home/eilidhm/.ghcup/env" ] && source "/home/eilidhm/.ghcup/env"
+
 # GNUPG
 # Use the current terminal session to prompt for
 # the passphrase
