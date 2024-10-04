@@ -31,6 +31,7 @@ alias clip="xclip -sel clip"
 alias fzf='fzf --preview "batcat --style=numbers --color=always {}"'
 alias fvim="fzf | xargs nvim"
 alias py="python3"
+alias prettyprint="prettybat"
 
 # less defaults
 export LESS="--use-color -R"
