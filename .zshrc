@@ -112,9 +112,6 @@ export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source /home/eilidhm/.local/bin/virtualenvwrapper.sh
 
-# Disable .NET telemetry
-DOTNET_CLI_TELEMETRY_OPTOUT=1
-
 # Autocomplete
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
