@@ -32,6 +32,9 @@ alias fzf='fzf --preview "batcat --style=numbers --color=always {}"'
 alias fvim="fzf | xargs nvim"
 alias py="python3"
 alias prettyprint="prettybat"
+alias clip="xclip -sel clip"
+alias py="python"
+alias commit-msg="curl https://whatthecommit.com/index.txt"
 
 # less defaults
 export LESS="--use-color -R"
@@ -68,6 +71,11 @@ export function curljson() {
     curl -fsSL "$@" | jq "." | batcat -l json
 }
 
+
+function silently(){
+    $1 "$@" > /dev/null 2>&1 &
+}
+
 export function ssh_colours() {
     ssh "$@"
     (sleep 2; setterm -default -clear rest) &
@@ -75,7 +83,6 @@ export function ssh_colours() {
 
 alias ssh=ssh_colours
 
-alias commit-msg="curl https://whatthecommit.com/index.txt"
 
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
