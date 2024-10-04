@@ -106,6 +106,12 @@ export SAVEHIST=10000
 export HISTSIZE=10000
 setopt SHARE_HISTORY
 
+# Python easy venv
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source /home/eilidhm/.local/bin/virtualenvwrapper.sh
+
 # Disable .NET telemetry
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 
