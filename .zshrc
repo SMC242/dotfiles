@@ -43,6 +43,14 @@ export FZF_DEFAULT_COMMAND="fdfind --type f --color=always --follow --exclude .g
 # LazyGit configs
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/tokyonight_night.yml"
 
+# pnpm
+export PNPM_HOME="/home/eilidhm/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 # Custom scripts
 export function ezsh () {
     nvim ~/.zshrc
