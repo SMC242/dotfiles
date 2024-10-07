@@ -13,7 +13,8 @@ $time\
 """
 
 right_format = """
-[◀]()
+[](#875f87)
+$status
 """
 
 # Disable the blank line at the start of the prompt
@@ -120,3 +121,11 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#875f87"
 format = '[ $time ]($style)'
+
+[status]
+disabled = false
+style =  "bg:#875f87"
+map_symbol = false
+symbol = ""
+success_symbol = ""
+format = "[$symbol $status]($style)"
