@@ -27,7 +27,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 # Aliases
-alias cat="bat --theme=Dracula"
+alias cat="bat"
 alias ls="eza"
 alias ll="eza -la --color=always --icons=always"
 alias tree="eza --tree"
@@ -61,6 +61,9 @@ export LESS="--use-color -R"
 # fzf defaults
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_DEFAULT_COMMAND="fdfind --type f --color=always --follow --exclude .git"
+
+# bat defaults
+export BAT_THEME="dracula"
 
 # LazyGit configs
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/tokyonight_night.yml"
