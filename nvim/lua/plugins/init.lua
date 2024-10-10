@@ -85,4 +85,14 @@ return {
     lazy = false,
     ft = "haskell",
   },
+  {
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+    opts = {},
+    -- lazy = false,
+    dependencies = "nvim-treesitter/nvim-treesitter",
+  },
 }
