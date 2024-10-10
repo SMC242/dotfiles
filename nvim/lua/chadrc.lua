@@ -35,6 +35,7 @@ M.mason = {
     "json-lsp",
     "rust-analyzer",
     "codelldb",
+    "emmet-language-server",
   },
 }
 
