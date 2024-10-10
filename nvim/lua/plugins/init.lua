@@ -79,4 +79,10 @@ return {
     version = "^5",
     lazy = false,
   },
+  {
+    "mrcjkb/haskell-tools.nvim",
+    version = "^4",
+    lazy = false,
+    ft = "haskell",
+  },
 }
