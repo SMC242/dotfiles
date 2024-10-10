@@ -43,6 +43,7 @@ return {
         "yaml",
         "c_sharp",
         "typescript",
+        "tsx",
       },
     },
   },
