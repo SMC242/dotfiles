@@ -15,7 +15,7 @@ fi
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
 
 # Set up GHCup
-[ -f "/home/eilidhm/.ghcup/env" ] && source "/home/eilidhm/.ghcup/env"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # GNUPG
 # Use the current terminal session to prompt for
@@ -69,7 +69,7 @@ export BAT_THEME="Nord"
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/tokyonight_night.yml"
 
 # pnpm
-export PNPM_HOME="/home/eilidhm/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -122,10 +122,7 @@ setopt SHARE_HISTORY
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source /home/eilidhm/.local/bin/virtualenvwrapper.sh
-
-# Autocomplete
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.local/bin/virtualenvwrapper.sh
 
 # Initialisers
 eval "$(starship init zsh)"
