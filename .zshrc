@@ -34,7 +34,7 @@ alias tree="eza --tree"
 alias grepc="rg --color=always"
 alias find="fdfind"
 alias man="batman"
-alias diff="delta"
+# alias diff="delta"
 alias vim="nvim"
 alias clip="xclip -sel clip"
 alias fzf='fzf --preview "batcat --style=numbers --color=always {}"'
@@ -60,7 +60,7 @@ export LESS="--use-color -R"
 
 # fzf defaults
 export FZF_DEFAULT_OPTS="--ansi"
-export FZF_DEFAULT_COMMAND="fdfind --type f --color=always --follow --exclude .git"
+export FZF_DEFAULT_COMMAND="fd --type f --color=always --follow --exclude .git"
 
 # bat defaults
 export BAT_THEME="Nord"
