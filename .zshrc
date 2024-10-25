@@ -106,8 +106,9 @@ export function ssh_colours() {
     (sleep 2; setterm -default -clear rest) &
 }
 
-alias ssh=ssh_colours
-
+if [[ -f "$XDG_CONFIG_HOME/.enable-ssh-colours" ]]; then
+  alias ssh=ssh_colours
+fi
 
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
