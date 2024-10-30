@@ -78,6 +78,16 @@ return {
     "mrcjkb/rustaceanvim",
     version = "^5",
     lazy = false,
+    keys = {
+      {
+        "<leader>ca",
+        function()
+          vim.cmd.RustLsp "codeAction"
+        end,
+        silent = false,
+        desc = "LSP Rust code action",
+      },
+    },
   },
   {
     "mrcjkb/haskell-tools.nvim",
