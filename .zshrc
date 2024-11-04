@@ -151,3 +151,4 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
     tmux attach 2> /dev/null || exec tmux new-session
 fi
 
+"$HOME/startup-script.zsh"
