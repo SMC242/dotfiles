@@ -1,4 +1,5 @@
 # Requires figlet and lolcat
+zmodload zsh/system
 
 FONT="block"
 COUNTER_PATH="$HOME/.session-counter"
@@ -8,7 +9,7 @@ function handleCounter() {
   if [[ ! -f "$COUNTER_PATH" ]]; then
     echo 1 > "$COUNTER_PATH"
     count=1
-  elif exec {fd}<> "$COUNTER_PATH" && flock -w "$LOCK_TIMEOUT_SECONDS" "$fd"; then
+  elif sysopen -w -u fd "$COUNTER_PATH"; then
     count=$(<"$COUNTER_PATH")
     ((count++))
     echo "$count" > "$COUNTER_PATH"
