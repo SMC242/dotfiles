@@ -40,7 +40,7 @@ alias man="batman"
 # alias diff="delta"
 alias vim="nvim"
 alias clip="xclip -sel clip"
-alias fzf='fzf --preview "batcat --style=numbers --color=always {}"'
+alias fzf='fzf --preview "bat --style=numbers --color=always {}"'
 alias fvim="fzf | xargs nvim"
 alias py="python3"
 alias prettyprint="prettybat"
@@ -93,7 +93,7 @@ export function ezsh () {
 }
 
 export function curljson() {
-    curl -fsSL "$@" | jq "." | batcat -l json
+    curl -fsSL "$@" | jq "." | bat -l json
 }
 
 
