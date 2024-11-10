@@ -106,7 +106,6 @@ return {
       require("nvim-ts-autotag").setup()
     end,
     opts = {},
-    -- lazy = false,
     dependencies = "nvim-treesitter/nvim-treesitter",
   },
   {
