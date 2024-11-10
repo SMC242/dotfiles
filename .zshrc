@@ -98,7 +98,9 @@ export function curljson() {
 
 
 function silently(){
-    $1 "$@" > /dev/null 2>&1 &
+    local cmd="$1"
+    shift  # Move the argument index past the command name
+    "$cmd" "$@" > /dev/null 2>&1 &
 }
 
 export function ssh_colours() {
