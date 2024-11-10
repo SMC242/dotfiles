@@ -36,6 +36,8 @@ M.mason = {
     "rust-analyzer",
     "codelldb",
     "emmet-language-server",
+    "gopls",
+    "goimports",
   },
 }
 

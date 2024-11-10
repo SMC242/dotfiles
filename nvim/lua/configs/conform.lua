@@ -7,6 +7,7 @@ local options = {
     javascript = { "prettier" },
     typescript = { "prettierd", "eslint_d" },
     yaml = { "yamllint" },
+    go = { "goimports", "gofmt" },
   },
 
   format_on_save = {

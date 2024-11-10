@@ -44,6 +44,7 @@ return {
         "c_sharp",
         "typescript",
         "tsx",
+        "go",
       },
     },
   },
