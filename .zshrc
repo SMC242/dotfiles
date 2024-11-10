@@ -15,7 +15,7 @@ fi
 
 
 # PATH
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin"
 
 # Set up GHCup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
