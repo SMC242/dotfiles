@@ -45,6 +45,8 @@ return {
         "typescript",
         "tsx",
         "go",
+        "c",
+        "cpp",
       },
     },
   },

@@ -8,6 +8,8 @@ local options = {
     typescript = { "prettierd", "eslint_d" },
     yaml = { "yamllint" },
     go = { "goimports", "gofmt" },
+    c = { "clang-format" },
+    cpp = { "clangformat" },
   },
 
   format_on_save = {

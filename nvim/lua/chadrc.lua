@@ -38,6 +38,8 @@ M.mason = {
     "emmet-language-server",
     "gopls",
     "goimports",
+    "clangd",
+    "clang-format",
   },
 }
 
