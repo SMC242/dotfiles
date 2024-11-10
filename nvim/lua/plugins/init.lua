@@ -42,6 +42,7 @@ return {
         "rust",
         "yaml",
         "c_sharp",
+        "javascript",
         "typescript",
         "tsx",
         "go",
