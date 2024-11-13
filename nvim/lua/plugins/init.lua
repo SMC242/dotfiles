@@ -88,7 +88,7 @@ return {
         function()
           vim.cmd.RustLsp "codeAction"
         end,
-        silent = false,
+        silent = true,
         desc = "LSP Rust code action",
       },
       {
@@ -96,7 +96,7 @@ return {
         function()
           vim.cmd.RustLsp { "hover", "actions" }
         end,
-        silent = false,
+        silent = true,
         mode = "i",
         desc = "LSP Rust hover",
       },
