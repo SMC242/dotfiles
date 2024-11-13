@@ -91,6 +91,15 @@ return {
         silent = false,
         desc = "LSP Rust code action",
       },
+      {
+        "K",
+        function()
+          vim.cmd.RustLsp { "hover", "actions" }
+        end,
+        silent = false,
+        mode = "i",
+        desc = "LSP Rust hover",
+      },
     },
   },
   {
