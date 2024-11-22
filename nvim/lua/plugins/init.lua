@@ -100,6 +100,15 @@ return {
         mode = "i",
         desc = "LSP Rust hover",
       },
+      {
+        "<leader>ex",
+        function()
+          vim.cmd.RustLsp "explainError"
+        end,
+        silent = true,
+        mode = "n",
+        desc = "LSP Rust explain error",
+      },
     },
   },
   {
