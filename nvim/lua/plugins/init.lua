@@ -103,7 +103,7 @@ return {
       {
         "<leader>ex",
         function()
-          vim.cmd.RustLsp "explainError"
+          vim.cmd.RustLsp { "explainError", "current" }
         end,
         silent = true,
         mode = "n",
