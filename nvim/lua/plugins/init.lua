@@ -97,7 +97,6 @@ return {
           vim.cmd.RustLsp { "hover", "actions" }
         end,
         silent = true,
-        mode = "i",
         desc = "LSP Rust hover",
       },
       {
