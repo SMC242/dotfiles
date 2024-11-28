@@ -108,6 +108,15 @@ return {
         mode = "n",
         desc = "LSP Rust explain error",
       },
+      {
+        "<leader>er",
+        function()
+          vim.cmd.RustLsp { "renderDiagnostic", "current" }
+        end,
+        silent = true,
+        mode = "n",
+        desc = "LSP Rust render error",
+      },
     },
   },
   {
