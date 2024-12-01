@@ -58,6 +58,10 @@ alias initial-commit="git add -A && git commit -am 'Initial commit' && git push 
 # Convert spaces in file names to dashes
 alias remove-spaces="rename -a ' ' '-' *"
 
+# youtube-dl replaecment
+BROWSER="firefox"
+alias youtube-dl="yt-dlp --cookies-from-browser $BROWSER"
+
 # less defaults
 export LESS="--use-color -R"
 
