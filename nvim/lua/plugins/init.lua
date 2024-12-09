@@ -106,11 +106,21 @@ return {
       end, { silent = true, desc = "LSP Rust render error" })
     end,
   },
+  -- https://github.com/mrcjkb/haskell-tools.nvim?tab=readme-ov-file#zap-quick-setup
   {
     "mrcjkb/haskell-tools.nvim",
     version = "^4",
     lazy = false,
     ft = "haskell",
+    config = function()
+      local ht = require "haskell-tools"
+      local opts = { noremap = true, silent = true, buffer = vim.api.nvim_get_current_buf() }
+
+      Keymap("n", "K", vim.lsp.codelens.run, opts)
+      Keymap("n", "<leader>ho", ht.hoogle.hoogle_signature, opts)
+      Keymap("n", "<leader>re", ht.repl.toggle, opts)
+      Keymap("n", "<leader>rq", ht.repl.quit, opts)
+    end,
   },
   {
     "windwp/nvim-ts-autotag",
