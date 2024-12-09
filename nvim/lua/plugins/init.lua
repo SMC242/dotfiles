@@ -116,7 +116,12 @@ return {
       local ht = require "haskell-tools"
       local bufnr = vim.api.nvim_get_current_buf()
 
-      Keymap("n", "K", vim.lsp.codelens.run, { silent = true, buffer = bufnr, desc = "LSP Haskell show code actions" })
+      Keymap(
+        "n",
+        "<leader>cl",
+        vim.lsp.codelens.run,
+        { silent = true, buffer = bufnr, desc = "LSP Haskell show code actions" }
+      )
       Keymap(
         "n",
         "<leader>ho",
