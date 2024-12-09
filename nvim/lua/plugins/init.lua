@@ -83,7 +83,8 @@ return {
   {
     "mrcjkb/rustaceanvim",
     version = "^5",
-    lazy = false,
+    lazy = true,
+    ft = "rust",
     config = function()
       Keymap("n", "<leader>ca", function()
         vim.cmd.RustLsp "codeAction"
@@ -104,7 +105,6 @@ return {
         vim.cmd.RustLsp { "renderDiagnostic", "current" }
       end, { silent = true, desc = "LSP Rust render error" })
     end,
-    ,
   },
   {
     "mrcjkb/haskell-tools.nvim",
