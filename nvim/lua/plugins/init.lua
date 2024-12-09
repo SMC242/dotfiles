@@ -114,12 +114,17 @@ return {
     ft = "haskell",
     config = function()
       local ht = require "haskell-tools"
-      local opts = { noremap = true, silent = true, buffer = vim.api.nvim_get_current_buf() }
+      local bufnr = vim.api.nvim_get_current_buf()
 
-      Keymap("n", "K", vim.lsp.codelens.run, opts)
-      Keymap("n", "<leader>ho", ht.hoogle.hoogle_signature, opts)
-      Keymap("n", "<leader>re", ht.repl.toggle, opts)
-      Keymap("n", "<leader>rq", ht.repl.quit, opts)
+      Keymap("n", "K", vim.lsp.codelens.run, { silent = true, buffer = bufnr, desc = "LSP Haskell show code actions" })
+      Keymap(
+        "n",
+        "<leader>ho",
+        ht.hoogle.hoogle_signature,
+        { silent = true, buffer = bufnr, desc = "LSP Haskell open Hoogle" }
+      )
+      Keymap("n", "<leader>re", ht.repl.toggle, { silent = true, buffer = bufnr, desc = "LSP Haskell toggle REPL" })
+      Keymap("n", "<leader>rq", ht.repl.quit, { silent = true, buffer = bufnr, desc = "LSP Haskell close REPL" })
     end,
   },
   {
