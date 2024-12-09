@@ -22,6 +22,7 @@ return {
 
       -- Custom keybinds
       vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "LSP Show help" })
+      Keymap("n", "K", vim.lsp.buf.hover, { silent = true, noremap = true })
     end,
   },
 
