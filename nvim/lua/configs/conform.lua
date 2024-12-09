@@ -10,6 +10,7 @@ local options = {
     go = { "goimports", "gofmt" },
     c = { "clang-format" },
     cpp = { "clangformat" },
+    haskell = { "ormolu" },
   },
 
   format_on_save = {

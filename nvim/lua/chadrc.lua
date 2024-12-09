@@ -40,6 +40,7 @@ M.mason = {
     "goimports",
     "clangd",
     "clang-format",
+    "ormolu",
   },
 }
 
