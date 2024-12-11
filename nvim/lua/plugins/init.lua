@@ -125,6 +125,12 @@ return {
       )
       Keymap(
         "n",
+        "<leader>ca",
+        "<Plug>HaskellHoverAction",
+        { silent = false, buffer = bufnr, desc = "LSP Haskell code action" }
+      )
+      Keymap(
+        "n",
         "<leader>ho",
         ht.hoogle.hoogle_signature,
         { silent = true, buffer = bufnr, desc = "LSP Haskell open Hoogle" }
