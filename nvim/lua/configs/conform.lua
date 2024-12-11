@@ -11,6 +11,7 @@ local options = {
     c = { "clang-format" },
     cpp = { "clangformat" },
     haskell = { "ormolu" },
+    markdown = { "prettier" },
   },
 
   format_on_save = {
