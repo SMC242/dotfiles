@@ -51,6 +51,7 @@ return {
         "go",
         "c",
         "cpp",
+        "bash",
       },
     },
   },
