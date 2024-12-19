@@ -11,8 +11,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # Source manjaro-zsh-configuration
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
+# Minimal config if Manjaro config isn't available
+elif [[ -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-
 
 # PATH
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin"
@@ -51,8 +53,8 @@ alias commit-msg="curl https://whatthecommit.com/index.txt"
 alias btime="TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'; time"
 # Shutdown from the terminal
 alias goodbye="shutdown -h; poweroff"
-# Kill all Docker containers
-alias docker-kill-all="docker kill $(docker ps -q)"
+# Kill all Docker containers. My work computer doesn't have docker, so this is conditionally defined
+command -v docker && alias docker-kill-all="docker kill $(docker ps -q)"
 # Script for making initial commits for a newly-created Git repository
 alias initial-commit="git add -A && git commit -am 'Initial commit' && git push origin"
 # Convert spaces in file names to dashes
