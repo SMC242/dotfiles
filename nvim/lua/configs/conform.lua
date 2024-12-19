@@ -12,6 +12,7 @@ local options = {
     cpp = { "clangformat" },
     haskell = { "ormolu" },
     markdown = { "prettier" },
+    bash = { "shellcheck" },
   },
 
   format_on_save = {

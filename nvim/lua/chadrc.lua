@@ -41,6 +41,7 @@ M.mason = {
     "clangd",
     "clang-format",
     "ormolu",
+    "shellcheck",
   },
 }
 
