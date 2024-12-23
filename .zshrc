@@ -47,7 +47,6 @@ alias fvim="fzf | xargs nvim"
 alias py="python3"
 alias prettyprint="prettybat"
 alias clip="xclip -sel clip"
-alias py="python"
 alias commit-msg="curl https://whatthecommit.com/index.txt"
 # Bash-like time output
 alias btime="TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'; time"
