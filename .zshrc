@@ -5,6 +5,8 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
+DISTRO=$(lsb_release -a | grep "Distributor ID" | cut -f2)
+
 # Set config file home
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -133,7 +135,17 @@ setopt SHARE_HISTORY
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-source $HOME/.local/bin/virtualenvwrapper.sh
+
+case "$DISTRO" in
+  ManjaroLinux)
+    source $HOME/.local/bin/virtualenvwrapper.sh
+    ;;
+  Ubuntu)
+    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh /dev/null 2>&1
+    ;;
+  *)
+    "Failed to load virtualenvwrapper: unknown distribution --> don't know the path to virtualenvwrapper.sh"
+esac
 
 # Initialisers
 eval "$(starship init zsh)"
