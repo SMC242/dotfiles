@@ -55,7 +55,7 @@ alias btime="TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'; time"
 # Shutdown from the terminal
 alias goodbye="shutdown -h; poweroff"
 # Kill all Docker containers. My work computer doesn't have docker, so this is conditionally defined
-command -v docker && alias docker-kill-all="docker kill $(docker ps -q)"
+command -v docker > /dev/null && alias docker-kill-all="docker kill $(docker ps -q)"
 # Script for making initial commits for a newly-created Git repository
 alias initial-commit="git add -A && git commit -am 'Initial commit' && git push origin"
 # Convert spaces in file names to dashes
