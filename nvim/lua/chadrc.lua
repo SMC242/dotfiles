@@ -42,6 +42,7 @@ M.mason = {
     "clang-format",
     "ormolu",
     "shellcheck",
+    "tailwindcss-language-server",
   },
 }
 

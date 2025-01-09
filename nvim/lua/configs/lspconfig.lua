@@ -16,6 +16,7 @@ local servers = {
   "gopls",
   "clangd",
   "emmet_language_server",
+  "tailwindcss",
 }
 
 -- lsps with default config
