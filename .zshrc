@@ -75,6 +75,9 @@ export FZF_DEFAULT_COMMAND="fd --type f --color=always --follow --exclude .git"
 # bat defaults
 export BAT_THEME="Nord"
 
+# Use the terminal's theme for FD's colours
+export LS_COLORS=$(dircolors)
+
 # LazyGit configs
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/tokyonight_night.yml"
 
