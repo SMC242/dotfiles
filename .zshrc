@@ -113,15 +113,6 @@ function silently(){
     "$cmd" "$@" > /dev/null 2>&1 &
 }
 
-export function ssh_colours() {
-    ssh "$@"
-    (sleep 2; setterm -default -clear rest) &
-}
-
-if [[ -f "$XDG_CONFIG_HOME/.enable-ssh-colours" ]]; then
-  alias ssh=ssh_colours
-fi
-
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
 bindkey "^[[1;5D" backward-word  # CTRL + Right
