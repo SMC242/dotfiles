@@ -24,6 +24,9 @@ export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin"
 # Set up GHCup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
+# Configure git-credential-manager to use GPG
+export GCM_CREDENTIAL_STORE=gpg
+
 # GNUPG
 # Use the current terminal session to prompt for
 # the passphrase
