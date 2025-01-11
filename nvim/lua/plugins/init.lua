@@ -2,6 +2,8 @@
 vim.wo.number = true
 vim.wo.relativenumber = true
 
+vim.opt.clipboard = "unnamed"
+
 Keymap = vim.keymap.set
 
 return {
