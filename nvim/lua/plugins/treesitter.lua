@@ -21,5 +21,11 @@ return {
       "bash",
       "python",
     },
+    -- For vim-matchup. See https://github.com/andymass/vim-matchup#tree-sitter-integration
+    matchup = {
+      enable = true,
+      -- Disable annoying "if" text at the end of if-blocks
+      disable_virtual_text = true,
+    },
   },
 }
