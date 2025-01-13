@@ -23,7 +23,6 @@ M.mason = {
     "css-lsp",
     "prettier",
     "prettierd",
-    "eslint_d",
     "pyright",
     "isort",
     "black",

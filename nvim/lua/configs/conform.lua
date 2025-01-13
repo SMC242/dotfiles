@@ -5,7 +5,8 @@ local options = {
     html = { "prettier" },
     python = { "isort", "black" },
     javascript = { "prettier" },
-    typescript = { "prettierd", "eslint_d" },
+    typescript = { "prettierd" },
+    typescriptreact = { "prettierd" },
     yaml = { "yamllint" },
     go = { "goimports", "gofmt" },
     c = { "clang-format" },
@@ -21,5 +22,13 @@ local options = {
     lsp_fallback = true,
   },
 }
+
+-- eslint_d is slow so using an autocmd to automatically apply ESlint's suggestions
+-- See https://github.com/stevearc/conform.nvim/issues/364#issuecomment-2308959873
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = vim.api.nvim_create_augroup("EslintFixAll", { clear = true }),
+  pattern = { "*.tsx", "*.ts", "*.jsx", "*.js" },
+  command = "silent! EslintFixAll",
+})
 
 require("conform").setup(options)
