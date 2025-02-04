@@ -44,7 +44,7 @@ alias tree="eza --tree"
 alias grepc="rg --color=always"
 alias find="fd"
 alias man="batman"
-# alias diff="delta"
+alias diff="delta"
 alias vim="nvim"
 alias clip="xclip -sel clip"
 alias fzf='fzf --preview "bat --style=numbers --color=always {}"'
