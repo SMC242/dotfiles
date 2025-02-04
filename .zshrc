@@ -118,9 +118,16 @@ function silently(){
     "$cmd" "$@" > /dev/null 2>&1 &
 }
 
-# List files matching the pattern in FZF
+# Use fzf to interactively grep. Opens selection in Vim
+# Taken from https://github.com/junegunn/fzf/blob/master/ADVANCED.md#ripgrep-integration
 function fgrep() {
-  grepc -l "$@" | fzf
+  rg --color=always --line-number --no-heading --smart-case "${*:-}" |
+    fzf --ansi \
+    --color "hl:-1:underline,hl+:-1:underline:reverse" \
+    --delimiter : \
+    --preview 'bat --color=always {1} --highlight-line {2}' \
+    --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
+    --bind 'enter:become(nvim {1} +{2})'
 }
 
 # Keybinds
