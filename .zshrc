@@ -118,6 +118,11 @@ function silently(){
     "$cmd" "$@" > /dev/null 2>&1 &
 }
 
+# List files matching the pattern in FZF
+function fgrep() {
+  grepc -l "$@" | fzf
+}
+
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
 bindkey "^[[1;5D" backward-word  # CTRL + Right
