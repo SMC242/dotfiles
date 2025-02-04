@@ -48,7 +48,8 @@ alias diff="delta"
 alias vim="nvim"
 alias clip="xclip -sel clip"
 alias fzf='fzf --preview "bat --style=numbers --color=always {}"'
-alias fvim="fzf | xargs nvim"
+# From https://github.com/junegunn/fzf?tab=readme-ov-file#turning-into-a-different-process
+alias fvim="fzf --bind 'enter:become(nvim {})"
 alias py="python3"
 alias prettyprint="prettybat"
 alias clip="xclip -sel clip"
