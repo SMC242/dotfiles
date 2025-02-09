@@ -1,3 +1,4 @@
+Keymap = vim.keymap.set
 return {
   "neovim/nvim-lspconfig",
   config = function()
@@ -7,5 +8,8 @@ return {
     -- Custom keybinds
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, { desc = "LSP Show help" })
     Keymap("n", "K", vim.lsp.buf.hover, { silent = true, noremap = true })
+    Keymap("n", "<leader>gd", function()
+      vim.lsp.buf.definition { silent = true, desc = "LSP Go to definition" }
+    end)
   end,
 }
