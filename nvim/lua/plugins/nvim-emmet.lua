@@ -8,5 +8,5 @@ return {
       { desc = "Emmet Wrap with abbreviation" }
     )
   end,
-  event = { "BufReadPre", "BufNewFile" },
+  ft = { "typescriptreact", "javascriptreact", "html" },
 }
