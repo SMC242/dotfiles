@@ -20,6 +20,7 @@ return {
       "cpp",
       "bash",
       "python",
+      "haskell",
     },
   },
 }
