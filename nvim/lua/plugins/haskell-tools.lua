@@ -2,7 +2,7 @@
 return {
   "mrcjkb/haskell-tools.nvim",
   version = "^4",
-  lazy = false,
+  lazy = true,
   ft = "haskell",
   config = function()
     local ht = require "haskell-tools"
