@@ -1,0 +1,26 @@
+[user]
+	name = SMC242
+	email = 56912943+SMC242@users.noreply.github.com
+[credential]
+	credentialStore = gpg
+	helper = 
+	helper = /usr/bin/git-credential-manager
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+
+[include]
+  path = /sl/projects/dotfiles/.gitconfig
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://stgit.dcs.gla.ac.uk"]
+	provider = generic
