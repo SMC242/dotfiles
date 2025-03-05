@@ -12,5 +12,13 @@ return {
     Keymap("n", "gd", vim.lsp.buf.definition, { silent = true, noremap = true, desc = "LSP Go to definition" })
     Keymap("n", "gr", vim.lsp.buf.references, { silent = true, noremap = true, desc = "LSP Go to references" })
     Keymap("n", "gi", vim.lsp.buf.implementation, { silent = true, noremap = true, desc = "LSP Go to implementations" })
+    -- For some reason, the default NvRenamer keybind doesn't get bound for all LSPs.
+    --  I can't delete it either. Too bad!
+    Keymap(
+      "n",
+      "<leader>ra",
+      require "nvchad.lsp.renamer",
+      { silent = true, noremap = true, desc = "LSP Rename symbol" }
+    )
   end,
 }
