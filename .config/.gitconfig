@@ -1,3 +1,5 @@
+# Either symlink this to $XDG_CONFIG_HOME or set include.path to this file
+# NOTE: put include at the top of the file so that the local config overrides it
 [user]
 	name = SMC242
 	email = 56912943+SMC242@users.noreply.github.com
@@ -24,3 +26,7 @@
 	useHttpPath = true
 [credential "https://stgit.dcs.gla.ac.uk"]
 	provider = generic
+
+[alias]
+  fpush = push --force-with-lease
+  amend = commit --amend
