@@ -5,6 +5,11 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
+# Used to conditionally add docker aliases.
+# I have the Docker daemon disabled on some machines as it
+# hurts startup/shutdown time
+ENABLE_DOCKER=0
+
 DISTRO=$(lsb_release -a | grep "Distributor ID" | cut -f2)
 
 # Set config file home
@@ -61,7 +66,7 @@ alias btime="TIMEFMT=$'real\t%E\nuser\t%U\nsys\t%S'; time"
 # Shutdown from the terminal
 alias goodbye="shutdown -h; poweroff"
 # Kill all Docker containers. My work computer doesn't have docker, so this is conditionally defined
-command -v docker > /dev/null && alias docker-kill-all="docker kill $(docker ps -q)"
+[ $DOCKER_ENABLED ] && command -v docker > /dev/null && alias docker-kill-all="docker kill $(docker ps -q)"
 # Script for making initial commits for a newly-created Git repository
 alias initial-commit="git add -A && git commit -am 'Initial commit' && git push origin"
 # Convert spaces in file names to dashes
