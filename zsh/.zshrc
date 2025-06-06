@@ -56,6 +56,7 @@ alias fzf='fzf --preview "bat --style=numbers --color=always {}"'
 # From https://github.com/junegunn/fzf?tab=readme-ov-file#turning-into-a-different-process
 alias fvim="fzf --bind 'enter:become(nvim {})'"
 alias rust-repl="evcxr"
+alias rust-watch="bacon"
 alias py="python3"
 alias prettyprint="prettybat"
 alias clip="xclip -sel clip"
