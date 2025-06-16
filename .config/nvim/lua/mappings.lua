@@ -6,5 +6,6 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+vim.api.nvim_create_user_command("BufOnly", "%bd|e#", { desc = "Buffer Delete all buffers except this one" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
