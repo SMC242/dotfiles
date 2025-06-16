@@ -23,6 +23,11 @@ elif [[ -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
   source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# Load private keybinds (E.G for work computer)
+if [[ -e "$XDG_CONFIG_HOME/.private_zshrc" ]]; then
+  source "$XDG_CONFIG_HOME/.private_zshrc"
+fi
+
 # PATH
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin"
 
