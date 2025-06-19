@@ -77,6 +77,8 @@ alias goodbye="shutdown -h; poweroff"
 alias initial-commit="git add -A && git commit -am 'Initial commit' && git push origin"
 # Convert spaces in file names to dashes
 alias remove-spaces="rename -a ' ' '-' *"
+# Fat-finger protection
+alias gti="git"
 
 # youtube-dl replaecment
 BROWSER="firefox"
