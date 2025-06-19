@@ -41,6 +41,8 @@ M.mason = {
     "ormolu",
     "shellcheck",
     "tailwindcss-language-server",
+    "ansible-language-server",
+    "ansible-lint",
   },
 }
 

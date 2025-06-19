@@ -17,6 +17,7 @@ local servers = {
   "clangd",
   "emmet_language_server",
   "tailwindcss",
+  "ansiblels",
 }
 
 -- lsps with default config
