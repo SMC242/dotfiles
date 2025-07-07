@@ -144,6 +144,10 @@ function fgrep() {
     --bind 'enter:become(nvim {1} +{2})'
 }
 
+function sshmux() {
+  ssh "$@" -t tmux attach-session || tmux
+}
+
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
 bindkey "^[[1;5D" backward-word  # CTRL + Right
