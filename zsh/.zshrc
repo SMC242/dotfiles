@@ -148,6 +148,13 @@ function sshmux() {
   ssh "$@" -t tmux attach-session || tmux
 }
 
+function gen-manpage() {
+  cmd="$1"
+  section="${2:-1}"  # Default to section 1
+
+  help2man --section "$section" "$cmd" | gzip | sudo tee "/usr/share/man/man$section/$cmd.$section.gz" > /dev/null
+}
+
 # Keybinds
 bindkey "^[[1;5C" forward-word  # CTRL + Left
 bindkey "^[[1;5D" backward-word  # CTRL + Right
