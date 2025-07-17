@@ -57,7 +57,6 @@ alias man="batman"
 alias diff="delta"
 alias vim="nvim"
 alias clip="xclip -sel clip"
-alias fzf='fzf --preview "bat --style=numbers --color=always {}"'
 # From https://github.com/junegunn/fzf?tab=readme-ov-file#turning-into-a-different-process
 alias fvim="fzf --bind 'enter:become(nvim {})'"
 alias rust-repl="evcxr"
@@ -88,7 +87,7 @@ alias youtube-dl="yt-dlp --cookies-from-browser $BROWSER"
 export LESS="--use-color -R"
 
 # fzf defaults
-export FZF_DEFAULT_OPTS="--ansi"
+export FZF_DEFAULT_OPTS="--ansi --preview 'bat --style=numbers --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f --color=always --follow --exclude .git"
 
 # bat defaults
