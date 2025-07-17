@@ -144,7 +144,7 @@ function fgrep() {
 }
 
 function sshmux() {
-  ssh "$@" -t tmux attach-session || tmux
+  ssh "$@" -t "tmux attach 2> /dev/null || exec tmux new-session"
 }
 
 function gen-manpage() {
