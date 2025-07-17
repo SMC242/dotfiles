@@ -156,7 +156,11 @@ function gen-manpage() {
 
 
 function centred-fzf() {
-  fzfOpts=(--margin=10,60)
+  fzfOpts=("--ansi")
+  if [[ $COLUMNS -ge 200 ]]; then
+    fzfOpts+="--margin=20,60"
+  fi
+
   env -u FZF_DEFAULT_OPTS fzf "${fzfOpts[@]}" "$@"
 }
 
