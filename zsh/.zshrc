@@ -164,27 +164,32 @@ function centred-fzf() {
 # SSHTO_DEFAULT_USERS: array of email addresses
 # SSHTO_GET_HOSTLIST: a function to get the list of hosts
 function sshto() {
+  emulate -L zsh
+  zmodload zsh/zutil
+
   [[ "${#SSHTO_DEFAULT_USERS[@]}" -eq 0 ]] && echo "The env var SSHTO_DEFAULT_USERS must be set" && exit 1
   [[ ! $(command -v SSHTO_GET_HOSTLIST) ]] && echo "The function SSHTO_GET_HOSTLIST must be defined" && exit 1
 
-  local selectedUser="$SSHTO_DEFAULT_USERS[0]"
-  local selectedHost=""
+  local selectedUser=("${SSHTO_DEFAULT_USERS[1]}")
+  local selectedHost
 
-  zmodload zsh/zutil
   zparseopts -D -F -K -- \
-    {u,-user}=selectedUser \
-    {h,--host}=selectedHost ||
+    {u,-user}:=selectedUser \
+    {h,-host}:=selectedHost ||
     return 1
 
-  if [[ -z "$selectedUser" ]]; then
+  if [[ -z "${selectedUser[-1]}" ]]; then
     selectedUser=$(printf "%s\n" "${SSHTO_DEFAULT_USERS[@]}" | centred-fzf --prompt="Select user:")
   fi
 
-  if [[ -z "$selectedHost" ]]; then
+  if [[ -z "${selectedHost[-1]}" ]]; then
     selectedHost=$(echo -n "$(SSHTO_GET_HOSTLIST)" | centred-fzf --prompt="Select host: ")
+  else
+    selectHost="${selectedHost[-1]}" 
   fi
 
-  sshmux $selectedUser@$selectedHost
+  echo "Selected ${selectedUser[-1]}@$selectedHost"
+  sshmux "${selectedUser[-1]}@$selectedHost"
 }
 
 # Keybinds
