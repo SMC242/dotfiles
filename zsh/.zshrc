@@ -174,26 +174,30 @@ function sshto() {
   [[ "${#SSHTO_DEFAULT_USERS[@]}" -eq 0 ]] && echo "The env var SSHTO_DEFAULT_USERS must be set" && exit 1
   [[ ! $(command -v SSHTO_GET_HOSTLIST) ]] && echo "The function SSHTO_GET_HOSTLIST must be defined" && exit 1
 
-  local selectedUser=("${SSHTO_DEFAULT_USERS[1]}")
+  local shouldSelectUser # Defaults to false because it's empty
   local selectedHost
+  local selectedUser
 
   zparseopts -D -F -K -- \
-    {u,-user}:=selectedUser \
+    {u,-user}=shouldSelectUser \
     {h,-host}:=selectedHost ||
     return 1
 
-  if [[ -z "${selectedUser[-1]}" ]]; then
+  echo "should select is $shouldSelectUser"
+  if (( $#shouldSelectUser )); then
     selectedUser=$(printf "%s\n" "${SSHTO_DEFAULT_USERS[@]}" | centred-fzf --prompt="Select user:")
+  else
+    selectedUser=("${SSHTO_DEFAULT_USERS[1]}")
   fi
 
   if [[ -z "${selectedHost[-1]}" ]]; then
     selectedHost=$(echo -n "$(SSHTO_GET_HOSTLIST)" | centred-fzf --prompt="Select host: ")
   else
-    selectHost="${selectedHost[-1]}" 
+    selectedHost="${selectedHost[-1]}" 
   fi
 
-  echo "Selected ${selectedUser[-1]}@$selectedHost"
-  sshmux "${selectedUser[-1]}@$selectedHost"
+  echo "Selected ${selectedUser}@$selectedHost"
+  sshmux "${selectedUser}@$selectedHost"
 }
 
 # Keybinds
