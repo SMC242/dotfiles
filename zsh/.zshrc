@@ -88,7 +88,7 @@ export LESS="--use-color -R"
 
 # fzf defaults
 export FZF_DEFAULT_OPTS="--ansi --preview 'bat --style=numbers --color=always {}'"
-export FZF_DEFAULT_COMMAND="fd --type f --color=always --follow --exclude .git"
+export FZF_DEFAULT_COMMAND="fd -H --type f --color=always --follow --exclude .git"
 
 # bat defaults
 export BAT_THEME="Nord"
