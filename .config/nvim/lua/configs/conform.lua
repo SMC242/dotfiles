@@ -1,3 +1,5 @@
+MASON_BIN_PATH = vim.fn.stdpath "data" .. "/mason/bin"
+
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
@@ -14,6 +16,14 @@ local options = {
     haskell = { "ormolu" },
     markdown = { "prettier" },
     bash = { "shellcheck" },
+  },
+
+  formatters = {
+    ruff = {
+      command = MASON_BIN_PATH .. "/ruff",
+      args = { "format", "$FILENAME" },
+      stdin = false,
+    },
   },
 
   format_on_save = {
