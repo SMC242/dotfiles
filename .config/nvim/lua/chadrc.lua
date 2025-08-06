@@ -43,6 +43,7 @@ M.mason = {
     "tailwindcss-language-server",
     "ansible-language-server",
     "ansible-lint",
+    "astro-language-server",
   },
 }
 

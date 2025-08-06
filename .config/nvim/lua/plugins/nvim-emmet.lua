@@ -8,5 +8,5 @@ return {
       { desc = "Emmet Wrap with abbreviation" }
     )
   end,
-  ft = { "typescriptreact", "javascriptreact", "html" },
+  ft = { "typescriptreact", "javascriptreact", "html", "astro" },
 }

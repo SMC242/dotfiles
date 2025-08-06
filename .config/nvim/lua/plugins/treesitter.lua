@@ -21,6 +21,7 @@ return {
       "bash",
       "python",
       "haskell",
+      "astro",
     },
   },
 }

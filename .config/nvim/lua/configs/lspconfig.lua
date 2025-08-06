@@ -18,6 +18,7 @@ local servers = {
   "emmet_language_server",
   "tailwindcss",
   "ansiblels",
+  "astro",
 }
 
 -- lsps with default config

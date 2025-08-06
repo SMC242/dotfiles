@@ -9,6 +9,7 @@ local options = {
     javascript = { "prettier" },
     typescript = { "prettierd" },
     typescriptreact = { "prettierd" },
+    astro = { "prettierd" },
     yaml = { "yamllint" },
     go = { "goimports", "gofmt" },
     c = { "clang-format" },
