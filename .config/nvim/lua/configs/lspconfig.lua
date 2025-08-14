@@ -19,6 +19,7 @@ local servers = {
   "tailwindcss",
   "ansiblels",
   "astro",
+  "bicep",
 }
 
 -- lsps with default config

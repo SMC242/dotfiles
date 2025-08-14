@@ -22,6 +22,7 @@ return {
       "python",
       "haskell",
       "astro",
+      "bicep",
     },
   },
 }
