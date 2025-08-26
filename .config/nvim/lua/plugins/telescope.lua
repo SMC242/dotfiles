@@ -18,5 +18,14 @@ return {
       buffer = 0,
       desc = "Telescope Diagnostic viewer",
     },
+    {
+      "<leader>fs",
+      pickers.lsp_document_symbols,
+      mode = "n",
+      noremap = true,
+      silent = true,
+      buffer = 0,
+      desc = "Telescope Symbol Viewer",
+    },
   },
 }
