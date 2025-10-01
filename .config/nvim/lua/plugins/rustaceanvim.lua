@@ -22,5 +22,9 @@ return {
     Keymap("n", "<leader>er", function()
       vim.cmd.RustLsp { "renderDiagnostic", "current" }
     end, { silent = true, desc = "LSP Rust render error" })
+
+    Keymap("n", "<leader>ct", function()
+      vim.cmd.RustLsp { "openCargo" }
+    end, { silent = true, desc = "LSP Rust open cargo.toml" })
   end,
 }
