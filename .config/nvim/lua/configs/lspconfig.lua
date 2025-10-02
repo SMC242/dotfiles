@@ -17,7 +17,6 @@ local servers = {
   "clangd",
   "emmet_language_server",
   "tailwindcss",
-  "ansiblels",
   "astro",
   "bicep",
 }
