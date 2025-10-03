@@ -78,6 +78,8 @@ alias initial-commit="git add -A && git commit -am 'Initial commit' && git push 
 alias remove-spaces="rename -a ' ' '-' *"
 # Fat-finger protection
 alias gti="git"
+# Use LibreOffice to convert a PowerPoint to PDF
+alias pptx-to-pdf="soffice --headless --convert-to pdf"
 
 # youtube-dl replaecment
 BROWSER="firefox"
