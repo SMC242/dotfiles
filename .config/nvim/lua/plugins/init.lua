@@ -4,8 +4,6 @@ vim.wo.relativenumber = true
 
 Keymap = vim.keymap.set
 
-require "filetypes.ansible"
-
 return {
   {
     "stevearc/conform.nvim",
