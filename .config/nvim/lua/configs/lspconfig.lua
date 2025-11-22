@@ -26,6 +26,7 @@ local servers = {
     -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#bicep
     cmd = { bicep_lsp_path },
   },
+  erlangls = {},
 }
 
 -- lsps with default config

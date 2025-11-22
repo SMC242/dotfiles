@@ -45,6 +45,7 @@ M.mason = {
     "ansible-lint",
     "astro-language-server",
     "bicep-lsp",
+    "erlang-ls",
   },
 }
 
