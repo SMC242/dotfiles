@@ -81,6 +81,9 @@ alias gti="git"
 # Use LibreOffice to convert a PowerPoint to PDF
 alias pptx-to-pdf="soffice --headless --convert-to pdf"
 
+# Kitty-specific
+alias icat="kitten icat"
+
 # youtube-dl replaecment
 BROWSER="firefox"
 alias youtube-dl="yt-dlp --cookies-from-browser $BROWSER"
