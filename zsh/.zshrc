@@ -8,7 +8,7 @@
 # Used to conditionally add docker aliases.
 # I have the Docker daemon disabled on some machines as it
 # hurts startup/shutdown time
-ENABLE_DOCKER=0
+DOCKER_ENABLED=1
 
 DISTRO=$(lsb_release -a | grep "Distributor ID" | cut -f2)
 
@@ -80,6 +80,8 @@ alias remove-spaces="rename -a ' ' '-' *"
 alias gti="git"
 # Use LibreOffice to convert a PowerPoint to PDF
 alias pptx-to-pdf="soffice --headless --convert-to pdf"
+# Open public wifi sign-in page
+alias wifi-login="route -n | awk 'NR == 3 {print \"http://\"\$2}' | xargs xdg-open"
 
 # Kitty-specific
 alias icat="kitten icat"
