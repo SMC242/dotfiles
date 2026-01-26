@@ -41,10 +41,7 @@ M.mason = {
     "ormolu",
     "shellcheck",
     "tailwindcss-language-server",
-    "ansible-language-server",
-    "ansible-lint",
     "astro-language-server",
-    "bicep-lsp",
     "erlang-ls",
   },
 }
