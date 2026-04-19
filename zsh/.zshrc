@@ -46,6 +46,9 @@ export GPG_TTY=$(tty)
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Make new files readable to group and invisible to others
+command -v umask > /dev/null && umask 0027
+
 # Aliases
 alias cat="bat"
 alias ls="eza"
