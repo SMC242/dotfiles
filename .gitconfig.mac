@@ -1,0 +1,31 @@
+# Either symlink this to $XDG_CONFIG_HOME or set include.path to this file
+# NOTE: put include at the top of the file so that the local config overrides it
+[user]
+	name = SMC242
+	email = 56912943+SMC242@users.noreply.github.com
+[credential]
+	credentialStore = gpg
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://github.com"]
+	helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/local/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[core]
+	editor = nvim
+
+[include]
+  path = /sl/projects/dotfiles/.gitconfig
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[credential "https://stgit.dcs.gla.ac.uk"]
+	provider = generic
+
+[alias]
+  fpush = push --force-with-lease
+  amend = commit --amend
+  wip = commit -am
+  unwip = reset --soft HEAD~1
