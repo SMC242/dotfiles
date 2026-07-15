@@ -31,6 +31,10 @@ fi
 # PATH
 export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/bin"
 
+if [[ $(uname) == "Darwin" ]]; then
+  export PATH="$PATH:/opt/homebrew/bin/python3:/opt/homebrew/opt/coreutils/libexec/gnubin"
+fi
+
 # Set up GHCup
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
@@ -248,11 +252,17 @@ autoload -Uz compinit && compinit
 # Make autocomplete case-insensitive
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Za-z}"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#source ~/powerlevel10k/powerlevel10k.zsh-theme
+if [[ $(uname) == "Darwin" ]]; then
+  export NVM_DIR="$HOME/.nvm"
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+else
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
