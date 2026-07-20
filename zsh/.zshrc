@@ -15,12 +15,19 @@ DISTRO=$(lsb_release -a | grep "Distributor ID" | cut -f2)
 # Set config file home
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Source manjaro-zsh-configuration
+# Source manjaro-zsh-configuration. The intention is to use this as defaults to override
+if [[ $(uname) == "Darwin" ]]; then
+  pluginPackageDir="$(brew --prefix)/share"
+else
+  pluginPackageDir="/usr/share"
+fi
+
+manualConfig=0
 if [[ -e /usr/share/zsh/manjaro-zsh-config ]]; then
   source /usr/share/zsh/manjaro-zsh-config
 # Minimal config if Manjaro config isn't available
-elif [[ -e /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+  manualConfig=1
 fi
 
 # Load private keybinds (E.G for work computer)
@@ -265,6 +272,12 @@ fi
 #source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# If not on Manjaro
+if [ "$manualConfig" -eq 1 ]; then
+  source "$pluginPackageDir/zsh-autosuggestions/zsh-autosuggestions.zsh"
+  source "$pluginPackageDir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+fi
 
 # Start TMux if in an interactive session and not already in TMux or GNU Screen
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
