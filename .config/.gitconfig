@@ -18,7 +18,7 @@
 	editor = nvim
 
 [include]
-  path = ./.gitconfig.private
+  path = ~/.config/.gitconfig.private
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 [credential "https://stgit.dcs.gla.ac.uk"]
