@@ -1,6 +1,6 @@
 return {
   "mrcjkb/rustaceanvim",
-  version = "^5",
+  version = "^9",
   lazy = true,
   ft = "rust",
   config = function()
