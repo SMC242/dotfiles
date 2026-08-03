@@ -1,5 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  branch = "master",
+  -- Recommended by docs. See https://github.com/nvim-treesitter/nvim-treesitter/tree/main#installation
+  lazy = false,
+  build = ":TSUpdate",
   opts = {
     ensure_installed = {
       "vim",
