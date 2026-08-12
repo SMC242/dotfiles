@@ -16,6 +16,8 @@
 	autoSetupRemote = true
 [core]
 	editor = nvim
+[merge]
+  tool = nvimdiff
 
 [include]
   path = ~/.config/.gitconfig.private
