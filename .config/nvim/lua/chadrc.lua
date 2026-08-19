@@ -23,7 +23,7 @@ M.mason = {
     "css-lsp",
     "prettier",
     "prettierd",
-    "pyright",
+    "basedpyright",
     "ruff",
     "bash-language-server",
     "typescript-language-server",
