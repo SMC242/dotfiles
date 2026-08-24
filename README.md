@@ -11,3 +11,5 @@ This is my personal repository of dotfiles
 - Use GNU stow to put the configs in the correct places
   - `stow --target=$HOME .`
 - Install [`tpm`](https://github.com/tmux-plugins/tpm)
+- Install [kitty-themes](https://github.com/dexpota/kitty-themes)
+    - Current theme: Chalkboard
