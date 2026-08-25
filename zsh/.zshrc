@@ -277,6 +277,11 @@ fi
 if [ "$manualConfig" -eq 1 ]; then
   source "$pluginPackageDir/zsh-autosuggestions/zsh-autosuggestions.zsh"
   source "$pluginPackageDir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+  # Configure autosuggestions
+  # See https://github.com/zsh-users/zsh-autosuggestions#configuration
+  # and https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797#256-colors
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=243,bold"
 fi
 
 # Start TMux if in an interactive session and not already in TMux or GNU Screen
