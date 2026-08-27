@@ -3,7 +3,13 @@ return {
   version = "^9",
   lazy = true,
   ft = "rust",
+  dependencies = {
+    "chrisgrieser/nvim-lsp-endhints",
+  },
   config = function()
+    -- Enable inlay hints for Rust
+    require("lsp-endhints").enable()
+
     Keymap("n", "<leader>ca", function()
       vim.cmd.RustLsp "codeAction"
     end, { silent = true, desc = "LSP Rust code action" })
