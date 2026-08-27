@@ -4,5 +4,8 @@
 return {
   "chrisgrieser/nvim-lsp-endhints",
   event = "LspAttach",
-  opts = {}, -- required, even if empty
+  -- enabled = false,
+  opts = {
+    autoEnableHints = false,
+  }, -- required, even if empty
 }
