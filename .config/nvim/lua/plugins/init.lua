@@ -4,9 +4,6 @@ vim.wo.relativenumber = true
 
 Keymap = vim.keymap.set
 
--- I only want inlay hints for Rust, which is not configured with lspconfig
--- require("lsp-endhints").disable()
-vim.lsp.inlay_hint.enable(false)
 
 return {
   {
