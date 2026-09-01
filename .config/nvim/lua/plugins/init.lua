@@ -4,6 +4,9 @@ vim.wo.relativenumber = true
 
 Keymap = vim.keymap.set
 
+-- Centre screen after page-up/down
+Keymap("n", "<C-u>", "<C-u>zz")
+Keymap("n", "<C-d>", "<C-d>zz")
 
 return {
   {
