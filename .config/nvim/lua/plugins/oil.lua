@@ -3,7 +3,11 @@ return {
   lazy = false,
   ---@module 'oil'
   ---@type oil.SetupOpts
-  opts = {},
+  opts = {
+    view_options = {
+      show_hidden = true,
+    },
+  },
   config = function(_, opts)
     require("oil").setup(opts)
     vim.keymap.set("n", "<leader>o", "<CMD>Oil<CR>", { silent = true, desc = "Oil Open Oil" })
