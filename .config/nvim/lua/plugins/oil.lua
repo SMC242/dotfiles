@@ -22,6 +22,9 @@ function realpath_under_cursor()
     return vim.api.nvim_echo({ { "ERROR: not an Oil.nvim buffer" } }, true, { err = true })
   end
 
+  -- Strip oil:// prefix. NOTE: Lua uses 1-based indexing
+  local dir_name = oil_buf_name:sub(7)
+
   local current_line = vim.api.nvim_get_current_line()
   if current_line == "" then
     return vim.api.nvim_echo({ { "ERROR: nothing under the cursor" } }, true, { err = true })
@@ -29,7 +32,7 @@ function realpath_under_cursor()
 
   -- Oil lines contain line number, an icon, and the file name
   local target_file_name = words(current_line)[3]
-  vim.fn.setreg("*", oil_buf_name .. target_file_name)
+  vim.fn.setreg("*", dir_name .. target_file_name)
 end
 
 return {
