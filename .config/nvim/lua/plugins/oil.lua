@@ -8,24 +8,28 @@ function words(str)
   return t
 end
 
+-- Source: https://gist.github.com/kgriffs/124aae3ac80eefe57199451b823c24ec
+function string:startswith(start)
+  return self:sub(1, #start) == start
+end
+
 function realpath_under_cursor()
-  local line = vim.api.nvim_get_current_line()
-  -- Oil lines include a line number, file icon, and file name
-  local split = words(line)
-  local file_name = split[3]
-
-  local cmd = string.format("realpath %s", file_name)
-  local handle = io.popen(cmd)
-  if handle == nil then
-    return vim.api.nvim_echo({ { "ERROR: failed to run shell command\n" } }, true, { err = true })
+  -- Should be oil:///absolute/path/to/dir
+  local oil_buf_name = vim.fn.getreg "%"
+  if oil_buf_name == "" then
+    return vim.api.nvim_echo({ { "ERROR: the file name register is empty" } }, true, { err = true })
+  elseif not string.startswith(oil_buf_name, "oil://") then
+    return vim.api.nvim_echo({ { "ERROR: not an Oil.nvim buffer" } }, true, { err = true })
   end
 
-  local output = handle:read "*a"
-  if output == nil then
-    vim.api.nvim_echo({ { "ERROR: no output from shell command" } }, true, { err = true })
-  else
-    vim.fn.setreg("*", output)
+  local current_line = vim.api.nvim_get_current_line()
+  if current_line == "" then
+    return vim.api.nvim_echo({ { "ERROR: nothing under the cursor" } }, true, { err = true })
   end
+
+  -- Oil lines contain line number, an icon, and the file name
+  local target_file_name = words(current_line)[3]
+  vim.fn.setreg("*", oil_buf_name .. target_file_name)
 end
 
 return {
