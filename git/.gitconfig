@@ -29,5 +29,6 @@
 [alias]
   fpush = push --force-with-lease
   amend = commit --amend
-  wip = commit -am
+  wip = commit -am "wip"
   unwip = reset --soft HEAD~1
+  stashi = stash --include-untracked
