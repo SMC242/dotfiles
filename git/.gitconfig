@@ -15,9 +15,16 @@
 [push]
 	autoSetupRemote = true
 [core]
-	editor = nvim
+	editor = nvimdiff
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  dark = true
 [merge]
-  tool = nvimdiff
+  tool = nvim
+  conflictStyle = zdiff3diff
 
 [include]
   path = ~/.config/.gitconfig.private
