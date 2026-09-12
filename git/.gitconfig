@@ -24,7 +24,7 @@
   dark = true
 [merge]
   tool = nvim
-  conflictStyle = zdiff3diff
+  conflictStyle = zdiff3
 
 [include]
   path = ~/.config/.gitconfig.private
