@@ -252,6 +252,9 @@ esac
 # Initialisers
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
+if [ $(command -v uv > /dev/null) ] ; then 
+  eval "$(uv generate-shell-completion zsh)"
+fi
 
 # Docker initialisation
 fpath=(~/.docker/completions $fpath)
