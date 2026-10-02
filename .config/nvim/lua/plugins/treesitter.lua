@@ -27,6 +27,7 @@ return {
       "haskell",
       "astro",
       "bicep",
+      "terraform",
     },
   },
 }
