@@ -43,7 +43,7 @@ M.mason = {
     "tailwindcss-language-server",
     "astro-language-server",
     "erlang-ls",
-    "terraform",
+    "terraform-ls",
   },
 }
 

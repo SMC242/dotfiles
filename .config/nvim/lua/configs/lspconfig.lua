@@ -26,7 +26,13 @@ local servers = {
     -- See https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#bicep
     cmd = { bicep_lsp_path },
   },
-  terraform_lsp = {},
+  terraformls = {
+    init_options = {
+      experimentalFeatures = {
+        validateOnSave = true,
+      },
+    },
+  },
   erlangls = {},
 }
 
