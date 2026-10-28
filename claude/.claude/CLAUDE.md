@@ -14,3 +14,4 @@
 - For Python projects, run the linter and unit tests
 - For TypeScript projects, run the linter, typecheck, and unit tests
 - For GitHub actions, run actionlint via the Docker container `rhysd/actionlint`
+- For Terraform projects, run tflint and terraform validate on your changes
